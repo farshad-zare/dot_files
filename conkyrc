@@ -1,0 +1,46 @@
+
+conky.config = {
+  override_utf8_locale = true,
+  alignment = 'bottom_right',
+  border_width = 0,
+  cpu_avg_samples = 4,
+  default_color = 'white',
+  default_outline_color = 'grey',
+  default_shade_color = 'red',
+  draw_borders = true,
+  draw_graph_borders = true,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'DejaVu Sans Mono:size=10',
+  gap_x = 60,
+  gap_y = 40,
+  minimum_height = 200,
+  minimum_width = 5,
+  net_avg_samples = 2,
+  double_buffer = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  own_window = no,
+  own_window_class = 'conky',
+  own_window_argb_visual = true,
+  own_window_type = 'override',
+  own_window_argb_value = 0,
+  own_window_transparent = yes,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 1,
+  update_interval = 1,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false,
+  draw_blended = true
+}
+
+conky.text = [[
+${color yellow}$alignc${font Amatic SC:size=24}${time %d %b %Y}$font$color
+${color #FFB947}${voffset -10}$alignc${font Dancing Script:size=44}${time %H:%M}$font$color
+${color #D1B9AE}$alignc${voffset -10}${font ZARGHAN MO'ALA:size=48}${exec jdate +%G|fribidi --ltr}$font$voffset$color
+${color yellow}${voffset 20}${font Far.Dast Nevis:size=28}${exec jdate +%V|fribidi --ltr}$voffset ${font Far.Dast Nevis:size=28}${offset 10}${exec jdate +%d|fribidi --ltr}${offset 2}
+]]
