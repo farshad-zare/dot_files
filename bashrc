@@ -70,9 +70,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+		PS1='\e[01;31m\][\h\e[01;36m\] \W\e[01;31m\]]\$\e[00m\] '
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1='\e[01;32m\][\u@\h\e[01;37m\] \W\e[01;32m\]]\$\e[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -162,23 +162,21 @@ exitstatus()
 }
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //' -e "s/^//"
 }
 
 get_git_repo(){
 basename -s .git `git config --get remote.origin.url` 2> /dev/null | sed "s/^/@/"
 }
 
-PS1='\n'                                                   #newline
-PS1+='\[\033[01;34m\]\A'                                   #time 24h mode
-PS1+='\[\033[01;35m\] Avail. RAM: $(freemem)'              #available ram
-PS1+='\[\033[00;32m\] \u$ '                                #username
-PS1+='\[\033[01;31m\]\w '                                  #current directory
-PS1+='\[\033[01;33m\]$(parse_git_branch)'                                 #git branch
-PS1+='$(get_git_repo)'                                     #git branch
-PS1+='\[\033[01;32m\] \n> '                                #newline
-
-
+PS1='\n'
+PS1+='\e[01;34m\]\A'
+PS1+='\e[00;35m\] Avail. RAM: $(freemem)'
+PS1+='\e[00;32m\] \u$ '
+PS1+='\e[00;31m\]\w '
+PS1+='\e[01;33m\]$(parse_git_branch)'
+PS1+='$(get_git_repo)\e[0m'
+PS1+='\e[01;32m\] \n> '
 
 
 
