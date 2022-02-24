@@ -161,4 +161,42 @@ exitstatus()
     fi
 }
 
-PS1='\[\033[01;34m\]\A\[\033[01;35m\] Avail. RAM: $(freemem)\[\033[00;32m\] \u$ \[\033[01;31m\]\w $(exitstatus)\[\033[01;32m\] \n> '
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'
+}
+
+get_git_repo(){
+basename -s .git `git config --get remote.origin.url` 2> /dev/null | sed "s/^/@/"
+}
+
+PS1='\n'                                                   #newline
+PS1+='\[\033[01;34m\]\A'                                   #time 24h mode
+PS1+='\[\033[01;35m\] Avail. RAM: $(freemem)'              #available ram
+PS1+='\[\033[00;32m\] \u$ '                                #username
+PS1+='\[\033[01;31m\]\w '                                  #current directory
+PS1+='\[\033[01;33m\]$(parse_git_branch)'                                 #git branch
+PS1+='$(get_git_repo)'                                     #git branch
+PS1+='\[\033[01;32m\] \n> '                                #newline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
