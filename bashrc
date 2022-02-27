@@ -169,19 +169,27 @@ get_git_repo(){
 basename -s .git `git config --get remote.origin.url` 2> /dev/null | sed "s/^/@/"
 }
 
+get_git_modified(){
+git diff --name-only --diff-filter=M 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/•/"
+}
+
+get_git_staged(){
+git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/✔/"
+}
+
 PS1='\n'
 PS1+='\e[01;34m\]\A'
 PS1+='\e[00;35m\] Avail. RAM: $(freemem)'
 PS1+='\e[00;32m\] \u$ '
 PS1+='\e[00;31m\]\w '
 PS1+='\e[01;33m\]$(parse_git_branch)'
-PS1+='$(get_git_repo)\e[0m'
+PS1+='$(get_git_repo)'
+PS1+=' ['
+PS1+='$(get_git_modified)'
+PS1+=' $(get_git_staged)'
+PS1+=']'
+PS1+='\e[0m'
 PS1+='\e[01;32m\] \n> '
-
-
-
-
-
 
 
 
