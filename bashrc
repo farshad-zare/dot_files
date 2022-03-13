@@ -138,6 +138,24 @@ ex ()
   fi
 }
 
+##***********************************************************************************************************
+##***********************************************************************************************************
+##***********************************************************************************************************
+
+#bash immediately add commands to history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+#ignore adding duplicate commands to history
+export HISTCONTROL=ignorespace:ignoredups
+
+# Ignored adding to history
+HISTIGNORE='ls:ll:ls -alh:pwd:clear:history'
+
+# Set time format
+HISTTIMEFORMAT='%F %T '
+
+# Multiple commands on one line show up as a single line
+shopt -s cmdhist
 
 #load aliases file
 if [ -f ~/.bash_aliases ]; then
@@ -145,7 +163,6 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 #customize the prompt
-
 #available memory:
 freemem()
 {
