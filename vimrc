@@ -4,6 +4,12 @@ set relativenumber
 
 "Showing the statusline
 set laststatus=2
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+"autosave
+autocmd BufLeave,FocusLost * silent! wall
 
 "background color of the popup menu
 highlight Pmenu ctermfg=17 ctermbg=190 guifg=#00005f guibg=#dfff00
@@ -18,7 +24,6 @@ Plug 'preservim/NERDTree'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-crystalline'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
@@ -43,7 +48,7 @@ function! StatusLine(current, width)
   endif
   let l:s .= ' %f%h%w%m%r '
   if a:current
-    let l:s .= crystalline#right_sep('', 'Fill') . ' %{fugitive#head()}'
+    let l:s .= crystalline#right_sep('', 'Fill') . ' %{FugitiveHead()}'
   endif
 
   let l:s .= '%='
@@ -76,3 +81,9 @@ set laststatus=2
 
 "vim command to run coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+"key binding for prettier
+map <F3> :Prettier<CR>
+
+
+
+
