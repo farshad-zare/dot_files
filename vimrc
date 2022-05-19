@@ -23,10 +23,19 @@ call plug#begin()
 Plug 'tyru/caw.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-crystalline'
+Plug 'sbdchd/neoformat'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 
 "********************************Plugins settings******************************************
+"_________________________________________________________________________________________*
+
+"********************************neoformat*************************************************
+autocmd BufWritePre *.js *.jsx *.cjs *.json *.vue Neoformat
+let g:neoformat_try_node_exe = 1
+map <F3> :Neoformat prettier<CR>
+
+
 "**********************************coc-explorer********************************************
 noremap <silent> <F2> <Cmd>CocCommand explorer<CR>
 "******************* status line and tabline***********************************************
@@ -72,9 +81,9 @@ set guioptions-=e
 set laststatus=2
 
 "****************************vim command to run coc-prettier***************************************
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+"command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 "key binding for prettier
-map <F3> :Prettier<CR>
+"map <F3> :Prettier<CR>
 
 
 
