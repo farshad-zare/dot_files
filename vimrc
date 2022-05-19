@@ -7,6 +7,8 @@ set laststatus=2
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+set expandtab
+set smartindent
 
 "autosave
 autocmd BufLeave,FocusLost * silent! wall
@@ -16,28 +18,18 @@ highlight Pmenu ctermfg=17 ctermbg=190 guifg=#00005f guibg=#dfff00
 highlight PmenuSel ctermfg=15 ctermbg=14 guifg=#00005f guibg=#dfff00
 
 
-" Plugins
+"***********************************Plugins************************************************
 call plug#begin()
 Plug 'tyru/caw.vim'
-Plug 'shougo/context_filetype.vim'
-Plug 'preservim/NERDTree'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-crystalline'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
-" Plugins settings
-
-" NerdTreeTab
-let g:nerdtree_tabs_open_on_new_tab = 1
-let g:nerdtree_tabs_open_on_console_startup = 1
-
-" quickly open and close Nerd Tree
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['.directory', '.git$', 'node_modules']
-
-" status line and tabline
+"********************************Plugins settings******************************************
+"**********************************coc-explorer********************************************
+noremap <silent> <F2> <Cmd>CocCommand explorer<CR>
+"******************* status line and tabline***********************************************
 function! StatusLine(current, width)
   let l:s = ''
 
@@ -79,7 +71,7 @@ set showtabline=2
 set guioptions-=e
 set laststatus=2
 
-"vim command to run coc-prettier
+"****************************vim command to run coc-prettier***************************************
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 "key binding for prettier
 map <F3> :Prettier<CR>
