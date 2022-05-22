@@ -118,7 +118,6 @@ _G.packer_plugins = {
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
-    config = { " require('pluginsOpts/nullls') " },
     loaded = true,
     path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
@@ -176,18 +175,14 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-treesitter]], true)
  require('pluginsOpts/treesitter') 
 time([[Config for nvim-treesitter]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
- require('pluginsOpts/bufferline') 
-time([[Config for bufferline.nvim]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
  require('pluginsOpts/theme') 
 time([[Config for github-nvim-theme]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
- require('pluginsOpts/nullls') 
-time([[Config for null-ls.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+ require('pluginsOpts/bufferline') 
+time([[Config for bufferline.nvim]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
  require('pluginsOpts/neotree') 

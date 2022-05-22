@@ -3,7 +3,6 @@ require('plugins')
 require('configs')
 
 local nvim_lsp = require('lspconfig')
-local servers = {'emmet_ls', 'eslint', 'cssls', 'vuels', 'html', 'bashls', 'null-ls'}
 
 function on_attach(client, bufnr)
 
@@ -27,18 +26,78 @@ function on_attach(client, bufnr)
     map(']d', 'vim.diagnostic.goto_next()')
     map('<space>df', 'vim.diagnostic.open_float()')
 
-    if client.name ~= 'null-ls' then
-        client.resolved_capabilities.document_formatting = false
-    end
+    -- if client.name == 'eslint' then
+    --     map('<F4>', 'vim.lsp.buf.formatting_seq_sync()')
+    --     client.resolved_capabilities.document_formatting = true
+    -- else
+    client.resolved_capabilities.document_formatting = false
+    -- end
 end
 
-for _, lsp in ipairs(servers) do
-    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-    nvim_lsp[lsp].setup {
-        capabilities = capabilities,
-        on_attach = on_attach
+nvim_lsp.eslint.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
+                 "vue"}
+}
+
+nvim_lsp.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"}
+}
+
+nvim_lsp.emmet_ls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {'css', 'html'}
+}
+
+nvim_lsp.html.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {'html'},
+    cmd = {"vscode-html-language-server", "--stdio"}
+}
+
+nvim_lsp.cssls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {"css", "scss", "less"},
+    cmd = {"vscode-css-language-server", "--stdio"}
+}
+
+nvim_lsp.volar.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = {'vue'},
+    init_options = {
+        typescript = {
+            serverPath = '/usr/lib/node_modules/typescript/lib/tsserverlibrary.js'
+        }
     }
+}
 
+function nullls_on_attach(client, bufnr)
+    vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
+    local opts = {
+        noremap = true,
+        silent = true
+    }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F4>', '<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>', opts)
 end
 
+local M = {}
+
+local null_ls = require("null-ls")
+
+M.sources = {null_ls.builtins.formatting.prettier}
+
+M.config = {
+    on_attach = nullls_on_attach,
+    sources = M.sources
+}
+
+null_ls.setup(M.config)

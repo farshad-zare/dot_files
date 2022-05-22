@@ -47,8 +47,8 @@ return packer.startup({function(use)
     }
 
     use {'neovim/nvim-lspconfig'}
-
     use {'williamboman/nvim-lsp-installer'}
+    use {"jose-elias-alvarez/null-ls.nvim"}
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -56,11 +56,6 @@ return packer.startup({function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-
-    use {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = [[ require('pluginsOpts/nullls') ]]
-    }
 
     use {
         'hrsh7th/nvim-cmp',
