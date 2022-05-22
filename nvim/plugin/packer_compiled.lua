@@ -167,14 +167,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('pluginsOpts/nvimcmp') 
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
- require('pluginsOpts/treesitter') 
-time([[Config for nvim-treesitter]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
  require('pluginsOpts/theme') 
@@ -183,6 +175,14 @@ time([[Config for github-nvim-theme]], false)
 time([[Config for bufferline.nvim]], true)
  require('pluginsOpts/bufferline') 
 time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+ require('pluginsOpts/nvimcmp') 
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+ require('pluginsOpts/treesitter') 
+time([[Config for nvim-treesitter]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
  require('pluginsOpts/neotree') 

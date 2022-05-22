@@ -28,7 +28,6 @@ set.shiftround = true
 set.splitbelow = true -- open horizontal splits below current window
 set.splitright = true -- open vertical splits to the right of the current window
 set.laststatus = 2 -- always show status line
-
 -- ------------------------add border to diagnostics popup-----------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
 -- wrap open_float to inspect diagnostics and use the severity color for border
@@ -73,4 +72,17 @@ vim.diagnostic.config({
         source = "always" -- Or "if_many"
     }
 })
+-- -----------------Highlight line number instead of having icons in sign column-------------------------------------------
+-- ------------------------------------------------------------------------------------------------------------------------
+vim.cmd [[
+  highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
+  highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
+  highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
+  highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+
+  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+]]
 
