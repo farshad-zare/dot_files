@@ -77,9 +77,7 @@ nvim_lsp.volar.setup {
     }
 }
 
-local null_config = {
+null_ls.setup({
     on_attach = on_attach,
     sources = {null_ls.builtins.formatting.prettier}
-}
-
-null_ls.setup(null_config)
+})
