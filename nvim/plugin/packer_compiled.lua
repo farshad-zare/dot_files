@@ -106,6 +106,12 @@ _G.packer_plugins = {
     path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+  ["lualine.nvim"] = {
+    config = { " require('pluginsOpts/lualine') " },
+    loaded = true,
+    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["neo-tree.nvim"] = {
     config = { " require('pluginsOpts/neotree') " },
     loaded = true,
@@ -167,10 +173,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: github-nvim-theme
-time([[Config for github-nvim-theme]], true)
- require('pluginsOpts/theme') 
-time([[Config for github-nvim-theme]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+ require('pluginsOpts/neotree') 
+time([[Config for neo-tree.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+ require('pluginsOpts/treesitter') 
+time([[Config for nvim-treesitter]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
  require('pluginsOpts/bufferline') 
@@ -179,14 +189,14 @@ time([[Config for bufferline.nvim]], false)
 time([[Config for nvim-cmp]], true)
  require('pluginsOpts/nvimcmp') 
 time([[Config for nvim-cmp]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
- require('pluginsOpts/treesitter') 
-time([[Config for nvim-treesitter]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
- require('pluginsOpts/neotree') 
-time([[Config for neo-tree.nvim]], false)
+-- Config for: github-nvim-theme
+time([[Config for github-nvim-theme]], true)
+ require('pluginsOpts/theme') 
+time([[Config for github-nvim-theme]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+ require('pluginsOpts/lualine') 
+time([[Config for lualine.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

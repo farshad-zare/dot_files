@@ -46,6 +46,15 @@ return packer.startup({function(use)
         config = [[ require('pluginsOpts/bufferline') ]]
     }
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            opt = true
+        },
+        config = [[ require('pluginsOpts/lualine') ]]
+    }
+
     use {'neovim/nvim-lspconfig'}
     use {'williamboman/nvim-lsp-installer'}
     use {"jose-elias-alvarez/null-ls.nvim"}
