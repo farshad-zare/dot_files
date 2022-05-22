@@ -8,7 +8,7 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("n", "<F3>", ":Neotree position=float toggle=true<CR>", {
+map("n", "<F3>", ":Neotree git_base=HEAD position=float toggle=true<CR>", {
     noremap = true,
     silent = true
 })
