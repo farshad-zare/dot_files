@@ -166,47 +166,49 @@ fi
 
 #customize the prompt
 #available memory:
-# freemem()
-# {
-#      free -h | awk -F ' ' '{if(NR==2)print$7}'
-# }
-#
-# exitstatus()
-# {
-#     if [[ $? == 0 ]]; then
-#         echo ':)'
-#     else
-#         echo ':('
-#     fi
-# }
-#
-# parse_git() {
-# local git_state=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //' -e "s/^//")
-#
-#      if [[ ${#git_state} -gt 0 ]] ; then
-#         git_state+=$(basename -s .git `git config --get remote.origin.url` 2> /dev/null | sed "s/^/@/")
-#         git_state+=' ['
-#         git_state+=$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/•/")
-# 		git_state+=' '
-#         git_state+=$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/✔/")
-#         git_state+=']'
-#         echo $git_state;
-#      fi
-#
-# }
+ freemem()
+ {
+      free -h | awk -F ' ' '{if(NR==2)print$7}'
+ }
+
+ exitstatus()
+ {
+     if [[ $? == 0 ]]; then
+         echo ':)'
+     else
+         echo ':('
+     fi
+ }
+
+ parse_git() {
+ local git_state=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //' -e "s/^//")
+
+      if [[ ${#git_state} -gt 0 ]] ; then
+         git_state+=$(basename -s .git `git config --get remote.origin.url` 2> /dev/null | sed "s/^/@/")
+         git_state+=' ['
+         git_state+=$(git ls-files --others --exclude-standard 2> /dev/null| wc -l | sed "s/$/?/")
+         git_state+=' '
+         git_state+=$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/•/")
+         git_state+=' '
+         git_state+=$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/✔/")
+         git_state+=']'
+         echo $git_state;
+      fi
+
+ }
 
 
-# PS1='\n'
-# PS1+='\e[01;34m\]\A'
-# PS1+='\e[00;35m\] Avail. RAM: $(freemem)'
-# PS1+='\e[00;32m\] \u$ '
-# PS1+='\e[00;31m\]\w '
-# PS1+='\e[01;33m\]$(parse_git)'
-# PS1+='\e[0m'
-# PS1+='\e[01;32m\] \n> '
+ PS1='\n'
+ PS1+='\e[01;34m\]\A'
+ PS1+='\e[00;35m\] Avail. RAM: $(freemem)'
+ PS1+='\e[00;32m\] \u$ '
+ PS1+='\e[00;31m\]\w '
+ PS1+='\e[01;33m\]$(parse_git)'
+ PS1+='\e[0m'
+ PS1+='\e[01;32m\] \n> '
 
 # run starship prompt
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 
 
