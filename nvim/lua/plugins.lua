@@ -21,6 +21,8 @@ return packer.startup({function(use)
 
     use "wbthomason/packer.nvim"
 
+    use 'voldikss/vim-floaterm'
+
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -55,6 +57,8 @@ return packer.startup({function(use)
         config = [[ require('pluginsOpts/lualine') ]]
     }
 
+    use {'rcarriga/nvim-notify'}
+
     use {'neovim/nvim-lspconfig'}
     use {'williamboman/nvim-lsp-installer'}
     use {"jose-elias-alvarez/null-ls.nvim"}
@@ -65,7 +69,6 @@ return packer.startup({function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-
     use {
         'hrsh7th/nvim-cmp',
         config = [[ require('pluginsOpts/nvimcmp') ]]

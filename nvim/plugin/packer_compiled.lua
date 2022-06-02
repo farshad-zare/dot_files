@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-treesitter"] = {
     config = { " require('pluginsOpts/treesitter') " },
     loaded = true,
@@ -165,6 +170,11 @@ _G.packer_plugins = {
     path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -177,26 +187,26 @@ time([[Defining packer_plugins]], false)
 time([[Config for neo-tree.nvim]], true)
  require('pluginsOpts/neotree') 
 time([[Config for neo-tree.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
- require('pluginsOpts/treesitter') 
-time([[Config for nvim-treesitter]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
- require('pluginsOpts/bufferline') 
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('pluginsOpts/nvimcmp') 
-time([[Config for nvim-cmp]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
  require('pluginsOpts/theme') 
 time([[Config for github-nvim-theme]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+ require('pluginsOpts/treesitter') 
+time([[Config for nvim-treesitter]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
  require('pluginsOpts/lualine') 
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+ require('pluginsOpts/nvimcmp') 
+time([[Config for nvim-cmp]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+ require('pluginsOpts/bufferline') 
+time([[Config for bufferline.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

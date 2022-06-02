@@ -6,7 +6,7 @@ function on_attach(client, bufnr)
     local function map(key, cmd)
         local opts = {
             noremap = true,
-            silent = true
+            silent = false
         }
         vim.api.nvim_buf_set_keymap(bufnr, 'n', key, '<cmd>lua ' .. cmd .. '<CR>', opts)
     end
@@ -24,7 +24,7 @@ function on_attach(client, bufnr)
     map('<space>df', 'vim.diagnostic.open_float()')
 
     if client.name == 'null-ls' then
-        map('<F4>', 'vim.lsp.buf.formatting_seq_sync()')
+        map('<F5>', 'vim.lsp.buf.formatting_seq_sync()')
         client.resolved_capabilities.document_formatting = true
     else
         client.resolved_capabilities.document_formatting = false
