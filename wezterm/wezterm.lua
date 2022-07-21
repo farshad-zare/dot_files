@@ -10,9 +10,7 @@ return {
     -- }),
     font_size = 11,
     hide_tab_bar_if_only_one_tab = true,
-    color_scheme = "MaterialDarker"
     -- color_scheme = "Ollie"
     -- color_scheme = "Rippedcasts"
-    -- color_scheme = "Thayer Bright"
-    -- color_scheme = "Wombat"
+    color_scheme = "Thayer Bright"
 }
