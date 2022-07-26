@@ -1,19 +1,17 @@
 # Assign workspaces
-assign [app_id="firefox"] 2
-for_window [app_id="firefox"] focus
-
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
 
-assign [app_id=thunar] 3
-for_window [app_id=thunar] focus
+assign [app_id="nemo"] 3
+for_window [app_id="nemo"] focus
 
 assign [class="Telegram"] 4
 for_window [class="Telegram"] focus
 
-
 for_window [app_id="xed"] focus
 
+assign [class="persepolis"] 5 
+for_window [class="persepolis"] focus
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
@@ -43,9 +41,17 @@ for_window [title="Picture in picture"] floating enable, sticky enable
 for_window [title="nmtui"] floating enable,  resize set width 50 ppt height 70 ppt
 for_window [title="htop"] floating enable, resize set width 50 ppt height 70 ppt
 for_window [app_id="xsensors"] floating enable
-for_window [title="Save File"] floating enable
+for_window [title="Save File"] floating enable resize set width 40 ppt height 30 ppt
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+
+#custom floating for persepolis
+for_window [title="Properties"] floating enable
+for_window [title="Preferences"] floating enable
+for_window [title="Persepolis Download Manager"] floating disable
+for_window [title="Enter Your Link"] floating enable
 
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+

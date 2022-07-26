@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulators
-set $term-float xfce4-terminal
+set $term-float wezterm
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -19,8 +19,8 @@ set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
 ### Idle configuration
 exec swayidle -w\
-    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
-    timeout 770 'swaymsg "output * dpms off"' \
+    timeout 180 'swaymsg "output * dpms off"' \
+    timeout 180 'swaylock -f -C ~/.config/swaylock/config'\
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -C ~/.config/swaylock/config'
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -36,6 +36,8 @@ exec swayidle -w\
 #
     # Start a floating terminal
     bindsym $mod+Return exec $term-float
+
+    bindsym $mod+u exec swaylock -f -C ~/.config/swaylock/config
 
     # Open the power menu
     bindsym $mod+Shift+e exec $powermenu
@@ -200,7 +202,7 @@ bindsym $mod+r mode "resize"
 #
 # App shortcuts
 #
-    bindsym $mod+n exec thunar
+    bindsym $mod+n exec nemo
     bindsym $mod+o exec firefox
 #
 # Screenshots

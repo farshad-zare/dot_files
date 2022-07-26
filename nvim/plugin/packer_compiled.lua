@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/farshadz/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/farshadz/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/farshadz/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/farshadz/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/farshadz/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/farshad/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/farshad/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/farshad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/farshad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/farshad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -72,121 +72,117 @@ _G.packer_plugins = {
   ["bufferline.nvim"] = {
     config = { " require('pluginsOpts/bufferline') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["github-nvim-theme"] = {
     config = { " require('pluginsOpts/theme') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["lualine.nvim"] = {
     config = { " require('pluginsOpts/lualine') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["neo-tree.nvim"] = {
     config = { " require('pluginsOpts/neotree') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     config = { " require('pluginsOpts/nvimcmp') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-notify"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-treesitter"] = {
     config = { " require('pluginsOpts/treesitter') " },
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["vim-floaterm"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/farshadz/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    path = "/home/farshad/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
- require('pluginsOpts/neotree') 
-time([[Config for neo-tree.nvim]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
  require('pluginsOpts/theme') 
@@ -199,14 +195,18 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for lualine.nvim]], true)
  require('pluginsOpts/lualine') 
 time([[Config for lualine.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('pluginsOpts/nvimcmp') 
-time([[Config for nvim-cmp]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
  require('pluginsOpts/bufferline') 
 time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+ require('pluginsOpts/nvimcmp') 
+time([[Config for nvim-cmp]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+ require('pluginsOpts/neotree') 
+time([[Config for neo-tree.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
