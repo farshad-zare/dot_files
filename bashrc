@@ -190,7 +190,7 @@ fi
          git_state+=' '
          git_state+=$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/•/")
          git_state+=' '
-         git_state+=$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/✔/")
+         git_state+=$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l | tr -d '[:space:]' | sed "s/$/✓/")
          git_state+=']'
          echo $git_state;
       fi
