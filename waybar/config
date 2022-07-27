@@ -90,6 +90,13 @@
         "disable-markup" : false,
         "all-outputs": true,
         "format": "{icon}",
+        "format-icons": {
+                   "1": "",
+                   "2": "🌐",
+                   "3": "",
+                   "4": "",
+                   "5": "",
+               },
         "persistent_workspaces": {
                    "1": [], 
                },

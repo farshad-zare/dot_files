@@ -1,17 +1,26 @@
 # Assign workspaces
+assign [app_id="nemo"] 1
+for_window [app_id="nemo"] focus
+
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
 
-assign [app_id="nemo"] 3
-for_window [app_id="nemo"] focus
-
-assign [class="Telegram"] 4
+assign [class="Telegram"] 2
 for_window [class="Telegram"] focus
 
+assign [class="persepolis"] 2 
+for_window [class="persepolis"] focus
+
+assign [class="code-oss"] 3 
+for_window [class="code-oss"] focus
+
+assign [class="xed"] 3
 for_window [app_id="xed"] focus
 
-assign [class="persepolis"] 5 
-for_window [class="persepolis"] focus
+assign [app_id="org.wezfurlong.wezterm"] 4 
+for_window [app_id="org.wezfurlong.wezterm"] focus
+
+
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable

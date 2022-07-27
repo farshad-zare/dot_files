@@ -83,7 +83,6 @@ Arc-Dark Color Scheme
 
 #workspaces {
     font-size: 18px;
-    border-right: 2px solid @base1;
     padding-right: 5px; 
 }
 
@@ -112,6 +111,7 @@ Arc-Dark Color Scheme
 
 #taskbar{
     padding-left: 3px;
+    border-left: 2px solid @base1;
 }
 
 #taskbar button{

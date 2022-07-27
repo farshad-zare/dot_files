@@ -181,7 +181,7 @@ mode "resize" {
 #
     bindsym $mod+n exec nemo
     bindsym $mod+f exec firefox
-    bindsym $mod+t exec telegram
+    bindsym $mod+t exec telegram-desktop
     bindsym $mod+p exec persepolis
 #
 # Screenshots
