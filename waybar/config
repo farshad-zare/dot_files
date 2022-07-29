@@ -10,7 +10,6 @@
     "modules-left": [
         "custom/launcher",
         "sway/workspaces",
-        "wlr/taskbar",
         "sway/mode",
     ],
  
@@ -95,7 +94,7 @@
                    "2": "🌐",
                    "3": "",
                    "4": "",
-                   "5": "",
+                   "5": "▷",
                },
         "persistent_workspaces": {
                    "1": [], 

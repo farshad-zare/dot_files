@@ -14,13 +14,14 @@ for_window [class="persepolis"] focus
 assign [class="code-oss"] 3 
 for_window [class="code-oss"] focus
 
-assign [class="xed"] 3
+assign [app_id="xed"] 3
 for_window [app_id="xed"] focus
 
 assign [app_id="org.wezfurlong.wezterm"] 4 
 for_window [app_id="org.wezfurlong.wezterm"] focus
 
-
+assign [app_id="mpv"] 5
+for_window [app_id="mpv"] focus
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
