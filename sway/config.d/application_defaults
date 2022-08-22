@@ -5,8 +5,8 @@ for_window [app_id="nemo"] focus
 assign [class="firefox"] 2
 for_window [class="firefox"] focus
 
-assign [class="Telegram"] 2
-for_window [class="Telegram"] focus
+assign [app_id="telegramdesktop"] 2
+for_window [app_id="telegramdesktop"] focus
 
 assign [class="persepolis"] 2 
 for_window [class="persepolis"] focus
@@ -59,6 +59,8 @@ for_window [title="Properties"] floating enable
 for_window [title="Preferences"] floating enable
 for_window [title="Persepolis Download Manager"] floating disable
 for_window [title="Enter Your Link"] floating enable
+
+for_window [app_id="mpv"] floating enable
 
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen

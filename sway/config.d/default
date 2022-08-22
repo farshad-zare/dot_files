@@ -13,8 +13,8 @@ set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
 ### Idle configuration
 exec swayidle -w\
-    timeout 180 'swaymsg "output * dpms off"' \
     timeout 180 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 180 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -C ~/.config/swaylock/config'
 
@@ -66,6 +66,8 @@ exec swayidle -w\
 #
 # Workspaces:
 #
+    bindsym $mod+greater move workspace to output right
+    bindsym $mod+less move workspace to output left
     bindsym Mod1+Right workspace next
     bindsym Mod1+Left workspace prev
     # Switch to workspace
