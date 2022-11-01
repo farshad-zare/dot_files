@@ -7,3 +7,11 @@ alias nmux='tmux new-session nvim \; split-window -v \; resize-pane -D 12 \;'
 #youtube-dl
 alias ydl='youtube-dl'
 
+#install app 
+alias add='sudo pacman -S'
+
+#update apps
+alias update='sudo pacman -Syu'
+
+#remove app
+alias remove='sudo pacman -Rns'
