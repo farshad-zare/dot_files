@@ -1,0 +1,27 @@
+#! /usr/bin/bash
+
+if [[ "$1" == "--ff" ]]; then
+	firefox &
+
+elif [[ "$1" == "--tg" ]]; then
+	telegram-desktop &
+
+elif [[ "$1" == "--tr" ]]; then
+	wezterm &
+
+elif [[ "$1" == "--dwld" ]]; then
+	persepolis &
+
+elif [[ "$1" == "--cd" ]]; then
+	code &
+
+elif [[ "$1" == "--ink" ]]; then
+	inkscape &
+
+elif [[ "$1" == "--qalc" ]]; then
+	qalculate-qt &
+
+elif [[ "$1" == "--qgis" ]]; then
+	qgis &
+
+fi

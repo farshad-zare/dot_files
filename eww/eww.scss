@@ -1,0 +1,102 @@
+$title_color: #f8f9fa;
+$text_color: #ecd093;
+
+.genwin {
+	padding: 5px;
+	background-color: #070707;
+	border: 1px solid white;
+	padding-right: 15px;
+	border-radius: 3px;
+}
+
+/** Clock ********************************************/
+.time {
+	color: $title_color;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.day {
+	color: $text_color;
+}
+
+.year {
+	letter-spacing: 5px;
+	font-weight: bold;
+	color: $text_color;
+}
+
+.date {
+	color: $text_color;
+}
+
+.day,
+.year,
+.date {
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.farsi_date {
+	font-family: "Vazir FD-WOL";
+	font-size: 38px;
+	margin-left: 10px;
+	color: $text_color;
+}
+
+/** Network ********************************************/
+.font_icon,
+.font_icon_title {
+	font-family: "Font Awesome 6 free";
+}
+
+.wifi_title,
+.font_icon_title {
+	font-size: 28px;
+	color: $title_color;
+}
+
+.wifi_title {
+	margin-left: -70px;
+	font-weight: bold;
+}
+
+.font_icon_title {
+	margin-left: 5px;
+}
+
+.font_icon {
+	font-size: 22px;
+	color: $text_color;
+}
+
+.wifi_ip,
+.down_speed,
+.up_speed {
+	font-family: "Corben";
+	font-size: 18px;
+	color: $text_color;
+
+}
+
+/** Apps ********************************************/
+.first_row {
+	padding-top: 10px;
+	margin-left: 10px;
+}
+
+.second_row {
+	margin-left: 10px;
+	padding-bottom: 5px;
+}
+
+.app_btn,
+.dir_btn {
+	font-size: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	border: none;
+}

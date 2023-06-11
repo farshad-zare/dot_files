@@ -1,0 +1,97 @@
+;; clock vars
+(defpoll HOUR   :interval "5s" `date +\"%R\"`)
+(defpoll DAY    :interval "5s" `date +\"%a\"`)
+(defpoll DATE   :interval "5s" `date +\"%d\"`)
+(defpoll MONTH  :interval "5s" `date +\"%B\"`)
+(defpoll YEAR   :interval "5s" `date +\"%Y\"`)
+(defpoll jdate   :interval "5s" `jdate +%D`)
+(defpoll IP     :interval "3600s" `curl ident.me`)
+
+
+
+;; clock widget
+(defwidget clock []
+  (box :class "genwin" :orientation "h" :spacing 30 :space-evenly false :vexpand "true" :hexpand "false"
+    (box :orientation "v" :spacing -20
+      (label :class "time"  :valign "start"   :text "${HOUR}")
+      (label :class "farsi_date"   :valign "center"    :text jdate)
+    )
+    (box :orientation "v" :spacing 0
+     (label :class "date"  :valign "center"  :text "${DATE} ${MONTH}")
+     (label :class "year"  :valign "center"  :text YEAR)
+     (label :class "day"   :valign "center"     :text DAY)
+    )))
+
+;; network widget
+(defwidget network []
+  (box :class "genwin" :orientation "v" :spacing -10
+    (box :orientation "h" :spacing 0 
+      (label :class "font_icon_title" :text ""    :xalign 0.0 )
+      (label :class "wifi_title"      :text "Wifi" :xalign 0.0)
+    )
+
+    (box :orientation "h"
+      (label :xalign 0.7 :class "font_icon" :text "")
+      (label :xalign 0.0 :class "up_speed"  :text "${round(EWW_NET.wlp3s0.NET_UP / 2048, 0)} KB")
+    )
+    
+    (box 
+      (label :xalign 0.7 :class "font_icon" :text "")
+      (label :xalign 0.0 :class "down_speed"          :text "${round(EWW_NET.wlp3s0.NET_DOWN / 2048, 0)} KB")
+    )
+
+    (box :orientation "h"
+      (label :xalign 0.7 :class "font_icon" :text "")
+      (label :xalign 0.0 :class "wifi_ip"    :text "${IP}")
+    )
+  )
+)
+
+;; apps
+(defwidget apps [] 
+  (box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"  :spacing 20
+    (box :class "app_container first_row" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" :halign "center" :spacing 7
+      (button :style "background-image: url('icons/app_inkscape.svg');" :class "app_btn" :onclick "scripts/open_apps --ink")     
+		  (button :style "background-image: url('icons/app_terminal.svg');" :class "app_btn" :onclick "scripts/open_apps --tr")
+		  (button :style "background-image: url('icons/app_vscode.svg');" :class "app_btn" :onclick "scripts/open_apps --cd")
+      (button :style "background-image: url('icons/app_firefox.svg');" :class "app_btn" :onclick "scripts/open_apps --ff")
+      (button :style "background-image: url('icons/app_persepolis.svg');" :class "app_btn" :onclick "scripts/open_apps --dwld")
+      (button :style "background-image: url('icons/app_telegram.svg');" :class "app_btn" :onclick "scripts/open_apps --tg")
+      (button :style "background-image: url('icons/app_calculator.svg');" :class "app_btn" :onclick "scripts/open_apps --qalc")
+      (button :style "background-image: url('icons/app_qgis.svg');" :class "app_btn" :onclick "scripts/open_apps --qgis")
+    )
+  )
+)
+
+;; directories
+(defwidget dirs [] 
+  (box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"  :spacing 20
+    (box :class "app_container first_row" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" :halign "center" :spacing 7
+      (button :style "background-image: url('icons/folder_home.svg');"     :class "dir_btn" :onclick "scripts/open_dirs --home")     
+		  (button :style "background-image: url('icons/folder_download.svg');" :class "dir_btn" :onclick "scripts/open_dirs --dwld")
+		  (button :style "background-image: url('icons/folder_video.svg');"    :class "dir_btn" :onclick "scripts/open_dirs --video")
+      (button :style "background-image: url('icons/folder_picture.svg');"  :class "dir_btn" :onclick "scripts/open_dirs --pic")
+      (button :style "background-image: url('icons/folder_music.svg');"    :class "dir_btn" :onclick "scripts/open_dirs --music")
+   )
+  )
+)
+
+;; apps window
+(defwindow apps :stacking "bottom" :focusable "false" :monitor 1
+  :geometry (geometry :x 350 :y 250 :width 200 :height 90)
+  (apps))
+
+;; dir window
+(defwindow dirs :stacking "bottom" :focusable "false" :monitor 1
+  :geometry (geometry :x 350 :y 350 :width 200 :height 90)
+  (dirs))
+
+;; clock window
+(defwindow clock :stacking "bottom" :focusable "false" :monitor 1
+  :geometry (geometry :x 620 :y 70 :width 250 :height 155)
+  (clock))
+
+;; network wimdow
+(defwindow network :stacking "bottom" :focusable "false" :monitor 1
+  :geometry (geometry :x 350 :y 70 :width 250 :height 155)
+  (network))

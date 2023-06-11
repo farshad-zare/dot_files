@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+
+if [[ "$1" == "--home" ]]; then
+	nemo ~ &
+
+elif [[ "$1" == "--dwld" ]]; then
+	nemo ~/Downloads &
+
+elif [[ "$1" == "--music" ]]; then
+	nemo ~/Music &
+
+elif [[ "$1" == "--video" ]]; then
+	nemo ~/Videos &
+
+elif [[ "$1" == "--pic" ]]; then
+	nemo ~/Pictures &
+fi
