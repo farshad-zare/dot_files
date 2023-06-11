@@ -144,6 +144,11 @@ ex ()
 #add $HOME/local/bin/ to path
 PATH=$PATH:$HOME/local/bin/
 
+#setup pnpm
+export PNPM_HOME="/home/farshad/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
 #bash immediately add commands to history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
@@ -225,3 +230,8 @@ fi
 
 
 
+
+# pnpm
+export PNPM_HOME="/home/farshad/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
