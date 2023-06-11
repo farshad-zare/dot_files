@@ -1,0 +1,19 @@
+[Nemo Action]
+
+# %U - insert URI list of selection
+# %F - insert path list of selection
+# %P - insert path of parent (current) directory
+# %f or %N (deprecated) - insert display name of first selected file
+# %p - insert display name of parent directory
+# %D - insert device path of file (i.e. /dev/sdb1)
+# %e - insert display name of first selected file with the extension stripped
+# %% - insert a literal percent sign, don't treat the next character as a token
+# %X - insert the XID for the NemoWindow this action is being activated in.
+
+Name=Open with VScode
+Comment=Open current folder in VScode
+Exec=code %F
+Selection=s
+Extensions=dir;
+Dependencies=code;
+
