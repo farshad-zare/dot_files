@@ -141,13 +141,8 @@ ex ()
 ##***********************************************************************************************************
 ##***********************************************************************************************************
 ##***********************************************************************************************************
-#add $HOME/local/bin/ to path
-PATH=$PATH:$HOME/local/bin/
-
-#setup pnpm
-export PNPM_HOME="/home/farshad/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
+#add $HOME/.local/bin/ to path
+PATH=$PATH:$HOME/.local/bin/
 
 #bash immediately add commands to history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -176,15 +171,6 @@ fi
       free -h | awk -F ' ' '{if(NR==2)print$7}'
  }
 
- exitstatus()
- {
-     if [[ $? == 0 ]]; then
-         echo ':)'
-     else
-         echo ':('
-     fi
- }
-
  parse_git() {
  local git_state=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //' -e "s/^//")
 
@@ -210,28 +196,10 @@ fi
  PS1+='\e[00;31m\]\w '
  PS1+='\e[01;33m\]$(parse_git)'
  PS1+='\e[0m'
- PS1+='\e[01;32m\] \n> '
-
-# run starship prompt
-# eval "$(starship init bash)"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ PS1+='\e[0;37m\] \n> '
 
 # pnpm
-export PNPM_HOME="/home/farshad/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+#setup pnpm
+#export PNPM_HOME="/home/farshad/.local/share/pnpm"
+#export PATH="$PNPM_HOME:$PATH"
 # pnpm end
