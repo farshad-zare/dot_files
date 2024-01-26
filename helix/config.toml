@@ -1,0 +1,25 @@
+theme = "molokai"
+
+[editor]
+line-number = "relative"
+auto-save = true
+text-width = 100
+rulers = [100]
+bufferline = "multiple"
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 0
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "version-control"]
+right = ["diagnostics", "selections", "position",]
+separator = "│ "
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+F5 = ":format"
